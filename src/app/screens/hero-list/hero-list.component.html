@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-4" *ngFor="let hero of heroes">
+            <img [src]="hero.img" class="img-thumbnail">
+            <p><strong>{{hero.name}}</strong></p>
+            <button class="btn btn-danger" (click)="removeHero(hero.id)">Xóa</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <form (submit)="submitForm($event)" action="">
+            <div>
+                <label for="">Hero ID</label>
+                <input type="text" name="id">
+            </div>
+            <div>
+                <label for="">Hero Name</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label for="">Image</label>
+                <input type="text" name="image">
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
