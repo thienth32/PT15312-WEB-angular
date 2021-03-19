@@ -3,23 +3,36 @@ export const HEROES: Array<Hero> = [
     { 
         id: 11, 
         name: '	Vũ Văn Chương', 
-        img: "https://iap.poly.edu.vn/user/ph/PH11175.jpg"
+        img: "https://iap.poly.edu.vn/user/ph/PH11175.jpg",
+        skills: [
+            {
+                id: 1,
+                name: "java"
+            },
+            {
+                id: 2,
+                name: "C-sharp"
+            }
+        ]
     },
     { 
         id: 12, 
         name: 'Phạm Tiến Doanh', 
-        img: "https://iap.poly.edu.vn/user/ph/PH10742.jpg" 
+        img: "https://iap.poly.edu.vn/user/ph/PH10742.jpg",
+        skills: [
+            {
+                id: 3,
+                name: "uống bia"
+            },
+            {
+                id: 4,
+                name: "html"
+            }
+        ] 
     },
     { 
         id: 13, 
-        name: 'Bombasto', 
-        img: "Trần Việt Dũng"  
-    },
-    { id: 14, name: 'Celeritas', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 15, name: 'Magneta', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 16, name: 'RubberMan', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 17, name: 'Dynama', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 18, name: 'Dr IQ', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 19, name: 'Magma', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 20, name: 'Tornado', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" }
+        name: 'Trần Việt Dũng', 
+        img: "https://iap.poly.edu.vn/user/ph/PH10871.jpg"  
+    }
 ];
