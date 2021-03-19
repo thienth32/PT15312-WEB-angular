@@ -1,7 +1,20 @@
-export const HeroData = [
-    { id: 11, name: 'Dr Nice', img: "https://img1.looper.com/img/gallery/the-history-of-every-canceled-wolverine-movie/intro-1580910609.jpg" },
-    { id: 12, name: 'Narco', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
-    { id: 13, name: 'Bombasto', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg"  },
+import {Hero} from '../models/Hero';
+export const HeroData: Array<Hero> = [
+    { 
+        id: 11, 
+        name: '	Vũ Văn Chương', 
+        img: "https://iap.poly.edu.vn/user/ph/PH11175.jpg"
+    },
+    { 
+        id: 12, 
+        name: 'Phạm Tiến Doanh', 
+        img: "https://iap.poly.edu.vn/user/ph/PH10742.jpg" 
+    },
+    { 
+        id: 13, 
+        name: 'Bombasto', 
+        img: "Trần Việt Dũng"  
+    },
     { id: 14, name: 'Celeritas', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
     { id: 15, name: 'Magneta', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
     { id: 16, name: 'RubberMan', img: "https://flxt.tmsimg.com/assets/p170620_p_v10_an.jpg" },
