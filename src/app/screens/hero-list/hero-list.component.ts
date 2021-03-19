@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroData} from '../../mock-data/heros';
+import {HEROES} from '../../mock-data/HEROES';
+import {Hero} from '../../models/Hero';
 
 @Component({
   selector: 'app-hero-list',
@@ -9,9 +10,9 @@ import {HeroData} from '../../mock-data/heros';
 export class HeroListComponent implements OnInit {
 
   constructor() { }
-  heroes:any = [];
+  heroes:Array<Hero> = HEROES;
   ngOnInit(): void {
-    this.heroes = HeroData;
+    
   }
 
   removeHero(hero:any){

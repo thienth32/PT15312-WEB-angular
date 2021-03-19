@@ -1,5 +1,5 @@
 import {Hero} from '../models/Hero';
-export const HeroData: Array<Hero> = [
+export const HEROES: Array<Hero> = [
     { 
         id: 11, 
         name: '	Vũ Văn Chương', 
