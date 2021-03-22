@@ -5,15 +5,15 @@
             <form (submit)="submitForm($event)" action="">
                 <div class="form-group">
                     <label for="">Hero ID</label>
-                    <input type="text" class="form-control" name="id">
+                    <input type="text" class="form-control" [value]="formObject.id" name="id">
                 </div>
                 <div class="form-group">
                     <label for="">Hero Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" [value]="formObject.name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input type="text" class="form-control" name="image">
+                    <input type="text" class="form-control" [value]="formObject.img" name="image">
                 </div>
                 <div>
                     <button class="btn btn-success" type="submit">Save</button>
@@ -30,9 +30,8 @@
             <p>
                 <span *ngFor="let ski of hero.skills" class="badge text-white bg-warning">{{ski.name}}</span>
             </p>
-            <button class="btn  btn-danger" (click)="removeHero(hero)">Xóa</button>
+            <button class="btn  btn-danger" (click)="removeHero(hero)">Xóa</button> 
+            <button class="btn  btn-info" (click)="updateHero(hero)">Sửa</button>
         </div>
     </div>
-    
-    
 </div>

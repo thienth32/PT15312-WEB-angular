@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {HEROES} from '../../mock-data/HEROES';
+import {SKILLS} from '../../mock-data/SKILLS';
 import {Hero} from '../../models/Hero';
+import {Skill} from '../../models/Skill';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { textSpanIntersectsWithTextSpan } from 'typescript';
 
 @Component({
   selector: 'app-hero-list',
@@ -9,12 +13,36 @@ import {Hero} from '../../models/Hero';
 })
 export class HeroListComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * tạo ra kiểu dữ liệu & hiển thị danh sách monster
+   * lớp monster có các thuộc tính:
+   * id, name, image, detail, spells
+   * spells là dạng mảng của lớp Spell
+   * lớp Spell có các thuộc tính:
+   * id, name, icon
+   */
+
+  constructor(private modalService: NgbModal) { }
   heroes:Array<Hero> = HEROES;
-  detail: string = "<a href='http://google.com'>Link to google</a>";
-  
+  templateSkills:Array<Skill> = SKILLS;
+  selectedSkills: Array<Skill> = [];
+  formObject: Hero = {
+    id: 0,
+    name: "",
+    img: "",
+    skills: []
+  }
   ngOnInit(): void {
     
+  }
+
+  addSkill(checkedSkill: Skill){
+    let index = this.selectedSkills.indexOf(checkedSkill);
+    if(index == -1){
+      this.selectedSkills.push(checkedSkill);
+    }else{
+      this.selectedSkills = this.selectedSkills.filter(item => item != checkedSkill)
+    }
   }
 
   removeHero(hero:Hero){
@@ -32,5 +60,10 @@ export class HeroListComponent implements OnInit {
     this.heroes.push(newHero);
     // console.log(formData.get('id'), formData.get('name'));
     event.target.reset();
+  }
+
+  updateHero(hero: Hero){
+    let updateHero = {...hero};
+    this.formObject = updateHero;
   }
 }
