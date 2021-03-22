@@ -4,7 +4,7 @@ import {SKILLS} from '../../mock-data/SKILLS';
 import {Hero} from '../../models/Hero';
 import {Skill} from '../../models/Skill';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { textSpanIntersectsWithTextSpan } from 'typescript';
+
 
 @Component({
   selector: 'app-hero-list',
@@ -32,6 +32,7 @@ export class HeroListComponent implements OnInit {
     img: "",
     skills: []
   }
+
   ngOnInit(): void {
     
   }
@@ -45,6 +46,12 @@ export class HeroListComponent implements OnInit {
     }
   }
 
+  checkSkill(skillId: Number): Boolean{
+    let lstSkill = this.formObject.skills;
+    let existedIndex = lstSkill.findIndex(item => item.id == skillId);
+    return existedIndex != -1;
+  }
+
   removeHero(hero:Hero){
     this.heroes = this.heroes.filter((x: Hero) => x != hero);
   }
@@ -55,7 +62,8 @@ export class HeroListComponent implements OnInit {
     let newHero: Hero = {
       id: Number(formData.get('id')),
       name: `${formData.get('name')}`,
-      img: `${formData.get('image')}`
+      img: `${formData.get('image')}`,
+      skills: []
     }
     this.heroes.push(newHero);
     // console.log(formData.get('id'), formData.get('name'));
@@ -65,5 +73,20 @@ export class HeroListComponent implements OnInit {
   updateHero(hero: Hero){
     let updateHero = {...hero};
     this.formObject = updateHero;
+  }
+
+  updateFormObjectSkill(skill: Skill, event: any){
+    let lstSkill = this.formObject.skills;
+    let existedIndex = lstSkill.findIndex(item => item.id == skill.id);
+    if(event.target.checked && existedIndex == -1){
+      this.formObject.skills.push(skill);
+    }
+
+    if(event.target.checked == false && existedIndex != -1){
+      this.formObject.skills = this.formObject.skills.filter(
+                                      item => item.id != skill.id
+                                    );
+    }
+
   }
 }

@@ -22,17 +22,18 @@ export const HEROES: Array<Hero> = [
         skills: [
             {
                 id: 3,
-                name: "uống bia"
+                name: "Php"
             },
             {
                 id: 4,
-                name: "html"
+                name: "Android"
             }
         ] 
     },
     { 
         id: 13, 
         name: 'Trần Việt Dũng', 
-        img: "https://iap.poly.edu.vn/user/ph/PH10871.jpg"  
+        img: "https://iap.poly.edu.vn/user/ph/PH10871.jpg",
+        skills: []
     }
 ];

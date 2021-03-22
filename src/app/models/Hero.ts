@@ -3,7 +3,7 @@ export class Hero{
     id: Number;
     name: string;
     img: string;
-    skills?: Array<Skill>;
+    skills: Array<Skill>;
 
     constructor(id: Number, name: string, img: string, skills: Array<Skill> = []){
         this.id = id;
