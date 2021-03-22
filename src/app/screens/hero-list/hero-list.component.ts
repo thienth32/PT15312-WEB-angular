@@ -58,17 +58,18 @@ export class HeroListComponent implements OnInit {
 
   submitForm(event: any){
     event.preventDefault();
-    // let formData = new FormData(event.target);
-    console.log(this.formObject);
-    // let newHero: Hero = {
-    //   id: Number(formData.get('id')),
-    //   name: `${formData.get('name')}`,
-    //   img: `${formData.get('image')}`,
-    //   skills: []
-    // }
-    // this.heroes.push(newHero);
-    // // console.log(formData.get('id'), formData.get('name'));
-    // event.target.reset();
+    let index = this.heroes.findIndex(item => item.id == this.formObject.id);
+    if(index == -1){
+      this.heroes.push({...this.formObject});
+    }else{
+      this.heroes[index] = {...this.formObject};
+    }
+    this.formObject = {
+      id: 0,
+      name: "",
+      img: "",
+      skills: []
+    }
   }
 
   updateHero(hero: Hero){
