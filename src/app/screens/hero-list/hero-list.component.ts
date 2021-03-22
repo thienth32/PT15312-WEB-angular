@@ -58,16 +58,17 @@ export class HeroListComponent implements OnInit {
 
   submitForm(event: any){
     event.preventDefault();
-    let formData = new FormData(event.target);
-    let newHero: Hero = {
-      id: Number(formData.get('id')),
-      name: `${formData.get('name')}`,
-      img: `${formData.get('image')}`,
-      skills: []
-    }
-    this.heroes.push(newHero);
-    // console.log(formData.get('id'), formData.get('name'));
-    event.target.reset();
+    // let formData = new FormData(event.target);
+    console.log(this.formObject);
+    // let newHero: Hero = {
+    //   id: Number(formData.get('id')),
+    //   name: `${formData.get('name')}`,
+    //   img: `${formData.get('image')}`,
+    //   skills: []
+    // }
+    // this.heroes.push(newHero);
+    // // console.log(formData.get('id'), formData.get('name'));
+    // event.target.reset();
   }
 
   updateHero(hero: Hero){
@@ -87,6 +88,18 @@ export class HeroListComponent implements OnInit {
                                       item => item.id != skill.id
                                     );
     }
-
+  }
+  updateFormObjectAttribute(attributeName: string, event: any){
+    switch (attributeName){
+      case 'id':
+        this.formObject.id = Number(event.target.value)
+        break;
+      case 'name':
+        this.formObject.name = event.target.value
+        break;
+      case 'img':
+        this.formObject.img = event.target.value
+        break;
+    }
   }
 }

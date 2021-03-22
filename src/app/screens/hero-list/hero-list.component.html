@@ -5,20 +5,28 @@
             <form (submit)="submitForm($event)" action="">
                 <div class="form-group">
                     <label for="">Hero ID</label>
-                    <input type="text" class="form-control" [value]="formObject.id" name="id">
+                    <input type="text" class="form-control" 
+                      (change)="updateFormObjectAttribute('id', $event)"
+                      [value]="formObject.id" name="id">
                 </div>
                 <div class="form-group">
                     <label for="">Hero Name</label>
-                    <input type="text" class="form-control" [value]="formObject.name" name="name">
+                    <input type="text" class="form-control"
+                    (change)="updateFormObjectAttribute('name', $event)"
+                      [value]="formObject.name" name="name">
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input type="text" class="form-control" [value]="formObject.img" name="image">
+                    <input type="text" class="form-control"
+                    (change)="updateFormObjectAttribute('img', $event)"
+                      [value]="formObject.img" name="image">
                 </div>
                 <div class="form-check" *ngFor="let skill of templateSkills">
                   <input class="form-check-input" 
                     (click)="updateFormObjectSkill(skill, $event)" 
                     [checked]="checkSkill(skill.id)" 
+                    [value]="skill.id"
+                    name="skills[]"
                     type="checkbox" id="skill-{{skill.id}}">
                   <label class="form-check-label" for="skill-{{skill.id}}">
                     {{skill.name}}
