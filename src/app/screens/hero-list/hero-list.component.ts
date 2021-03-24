@@ -103,4 +103,8 @@ export class HeroListComponent implements OnInit {
   parentRemoveHero(data: Hero){
     this.heroes = this.heroes.filter(item => item.id != data.id);
   }
+
+  updatedHeroUnit(data: Hero){
+    this.formObject = {...data}
+  }
 }
