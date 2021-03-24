@@ -3,7 +3,6 @@ import {HEROES} from '../../mock-data/HEROES';
 import {SKILLS} from '../../mock-data/SKILLS';
 import {Hero} from '../../models/Hero';
 import {Skill} from '../../models/Skill';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -22,7 +21,7 @@ export class HeroListComponent implements OnInit {
    * id, name, icon
    */
 
-  constructor(private modalService: NgbModal) { }
+  constructor() { }
   heroes:Array<Hero> = HEROES;
   templateSkills:Array<Skill> = SKILLS;
   selectedSkills: Array<Skill> = [];
@@ -66,11 +65,6 @@ export class HeroListComponent implements OnInit {
       img: "",
       skills: []
     }
-  }
-
-  updateHero(hero: Hero){
-    let updateHero = {...hero};
-    this.formObject = updateHero;
   }
 
   updateFormObjectSkill(skill: Skill, event: any){
