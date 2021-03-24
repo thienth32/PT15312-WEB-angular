@@ -1,5 +1,5 @@
 import { Component, OnInit, 
-          Input } from '@angular/core';
+          Input, Output, EventEmitter } from '@angular/core';
 import { Hero } from 'src/app/models/Hero';
 
 @Component({
@@ -9,9 +9,16 @@ import { Hero } from 'src/app/models/Hero';
 })
 export class HeroUnitComponent implements OnInit {
   @Input("hero-data") heroData: Hero;
+  @Output() deleted = new EventEmitter<Hero>();
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  removeHero(){
+    this.deleted.emit(this.heroData);
+  }
+
+  updateHero(){}
 
 }

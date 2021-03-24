@@ -52,10 +52,6 @@ export class HeroListComponent implements OnInit {
     return existedIndex != -1;
   }
 
-  removeHero(hero:Hero){
-    this.heroes = this.heroes.filter((x: Hero) => x != hero);
-  }
-
   submitForm(event: any){
     event.preventDefault();
     let index = this.heroes.findIndex(item => item.id == this.formObject.id);
@@ -102,5 +98,9 @@ export class HeroListComponent implements OnInit {
         this.formObject.img = event.target.value
         break;
     }
+  }
+
+  parentRemoveHero(data: Hero){
+    this.heroes = this.heroes.filter(item => item.id != data.id);
   }
 }
