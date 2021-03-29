@@ -7,6 +7,11 @@ import { HeroListComponent } from './screens/hero-list/hero-list.component';
 import { HeroDetailComponent } from './screens/hero-detail/hero-detail.component';
 import { HeroUnitComponent } from './components/hero-unit/hero-unit.component';
 import { GenderPipe } from './pipes/gender.pipe';
+import { HomeComponent } from './screens/home/home.component';
+import { DanhMucComponent } from './screens/danh-muc/danh-muc.component';
+import { ClientLayoutComponent } from './screens/client-layout/client-layout.component';
+import { AdminLayoutComponent } from './screens/admin-layout/admin-layout.component';
+import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -16,6 +21,11 @@ import { GenderPipe } from './pipes/gender.pipe';
     HeroDetailComponent,
     HeroUnitComponent,
     GenderPipe,
+    HomeComponent,
+    DanhMucComponent,
+    ClientLayoutComponent,
+    AdminLayoutComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
