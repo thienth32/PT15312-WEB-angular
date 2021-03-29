@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path: 'danh-muc',
         component: DanhMucComponent
-      }
+      },
     ]
   },
   {
