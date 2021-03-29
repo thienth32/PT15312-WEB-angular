@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  counter(i: number) {
+    return new Array(i);
+  }
   constructor() { }
 
   ngOnInit(): void {
