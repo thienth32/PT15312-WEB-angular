@@ -12,7 +12,7 @@ import { DanhMucComponent } from './screens/danh-muc/danh-muc.component';
 import { ClientLayoutComponent } from './screens/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './screens/admin-layout/admin-layout.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,11 @@ import { DashboardComponent } from './screens/admin/dashboard/dashboard.componen
     DashboardComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
