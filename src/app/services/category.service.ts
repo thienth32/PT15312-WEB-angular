@@ -13,4 +13,9 @@ export class CategoryService {
   getAll(): Observable<Category[]>{
     return this.http.get<Category[]>(this.API_URL);
   }
+
+  findById(cateId: string): Observable<Category>{
+    let requestUrl = `${this.API_URL}/${cateId}?_embed=comics`;
+    return this.http.get<Category>(requestUrl);
+  }
 }

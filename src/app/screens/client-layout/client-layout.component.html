@@ -12,7 +12,7 @@
               </li>
               
               <li class="nav-item " *ngFor="let cate of cates">
-                <a class="nav-link " routerLink="danh-muc" href="javascript:;" >
+                <a class="nav-link " routerLink="danh-muc/{{cate.id}}" href="javascript:;" >
                   {{cate.name}}
                 </a>
               </li>
