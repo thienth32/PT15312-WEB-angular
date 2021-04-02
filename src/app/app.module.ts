@@ -13,6 +13,7 @@ import { ClientLayoutComponent } from './screens/client-layout/client-layout.com
 import { AdminLayoutComponent } from './screens/admin-layout/admin-layout.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ClientLayoutComponent,
     AdminLayoutComponent,
     DashboardComponent,
+    QtDanhMucComponent,
   ],
   imports: [
     HttpClientModule,

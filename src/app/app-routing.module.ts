@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './screens/admin-layout/admin-layout.component';
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
+import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.component';
 import { ClientLayoutComponent } from './screens/client-layout/client-layout.component';
 import { DanhMucComponent } from './screens/danh-muc/danh-muc.component';
 import { HomeComponent } from './screens/home/home.component';
@@ -26,8 +27,17 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
+        path: "",
+        redirectTo: 'dashboard',
+        pathMatch: "full"
+      },
+      {
         path: "dashboard",
         component: DashboardComponent
+      },
+      {
+        path: 'danh-muc',
+        component: QtDanhMucComponent
       }
     ]
   },
