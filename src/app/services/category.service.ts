@@ -26,4 +26,8 @@ export class CategoryService {
     let requestUrl = `${this.API_URL}/${cateId}?_embed=comics`;
     return this.http.get<Category>(requestUrl);
   }
+
+  addNewCategory(data: any): Observable<any>{
+    return this.http.post<any>(this.API_URL, data);
+  }
 }
