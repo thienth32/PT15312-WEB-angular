@@ -18,11 +18,8 @@ export class QtDanhMucComponent implements OnInit {
     })
   }
 
-  updateKeyword(event: any){
-    this.keyword = event.target.value.trim();
-  }
   search(event: any){
-    event.preventDefault();
+    this.keyword = event.target.value.trim();
     this.categoryService.searchByName(this.keyword, true).subscribe(data => {
       this.cates = data;
     })

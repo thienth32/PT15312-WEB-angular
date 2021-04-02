@@ -14,6 +14,8 @@ import { AdminLayoutComponent } from './screens/admin-layout/admin-layout.compon
 import { DashboardComponent } from './screens/admin/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.component';
+import { QtNewDanhMucComponent } from './screens/admin/qt-new-danh-muc/qt-new-danh-muc.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,14 @@ import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.comp
     AdminLayoutComponent,
     DashboardComponent,
     QtDanhMucComponent,
+    QtNewDanhMucComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
