@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -14,7 +14,8 @@ export class QtEditDanhMucComponent implements OnInit {
   editForm: FormGroup;
   constructor(
     private route: ActivatedRoute,
-    private cateService: CategoryService
+    private cateService: CategoryService,
+    private router: Router
   ) {
     this.editForm = new FormGroup({
       id: new FormControl(),
@@ -39,6 +40,13 @@ export class QtEditDanhMucComponent implements OnInit {
 
   get f(){
     return this.editForm.controls;
+  }
+
+  onSubmit(event: any){
+    event.preventDefault();
+    this.cateService.editCategory(this.editForm.value).subscribe(data => {
+      this.router.navigate(['/admin/danh-muc']);
+    })
   }
 
 }

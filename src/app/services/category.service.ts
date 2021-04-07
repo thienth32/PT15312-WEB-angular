@@ -30,4 +30,9 @@ export class CategoryService {
   addNewCategory(data: any): Observable<any>{
     return this.http.post<any>(this.API_URL, data);
   }
+
+  editCategory(data: Category): Observable<any>{
+    let requestUrl = `${this.API_URL}/${data.id}`;
+    return this.http.put<any>(requestUrl, data);
+  }
 }
