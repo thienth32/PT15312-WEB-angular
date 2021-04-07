@@ -27,7 +27,7 @@
                 <span *ngIf="c.comics != undefined">{{c.comics.length}}</span>
             </td>
             <td>
-                <button class="btn btn-info">Cập nhật</button>
+                <button routerLink="/admin/danh-muc/sua/{{c.id}}" class="btn btn-info">Cập nhật</button>
                 <button class="btn btn-danger">Xóa</button>
             </td>
         </tr>

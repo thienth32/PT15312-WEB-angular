@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.component';
 import { QtNewDanhMucComponent } from './screens/admin/qt-new-danh-muc/qt-new-danh-muc.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QtEditDanhMucComponent } from './screens/admin/qt-edit-danh-muc/qt-edit-danh-muc.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     QtDanhMucComponent,
     QtNewDanhMucComponent,
+    QtEditDanhMucComponent,
   ],
   imports: [
     HttpClientModule,
