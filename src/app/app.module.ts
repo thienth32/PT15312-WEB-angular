@@ -17,7 +17,10 @@ import { QtDanhMucComponent } from './screens/admin/qt-danh-muc/qt-danh-muc.comp
 import { QtNewDanhMucComponent } from './screens/admin/qt-new-danh-muc/qt-new-danh-muc.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QtEditDanhMucComponent } from './screens/admin/qt-edit-danh-muc/qt-edit-danh-muc.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { UploadDemoComponent } from './screens/admin/upload-demo/upload-demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,13 +36,16 @@ import { QtEditDanhMucComponent } from './screens/admin/qt-edit-danh-muc/qt-edit
     QtDanhMucComponent,
     QtNewDanhMucComponent,
     QtEditDanhMucComponent,
+    UploadDemoComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
