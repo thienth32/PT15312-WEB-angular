@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { map, finalize } from "rxjs/operators";
 import { Observable } from "rxjs";
+import { FormControl, FormGroup } from '@angular/forms';
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-upload-demo',
@@ -10,9 +12,29 @@ import { Observable } from "rxjs";
 })
 export class UploadDemoComponent implements OnInit {
   downloadURL!: Observable<string>;
-  constructor(private storage: AngularFireStorage) { }
+  bookForm: FormGroup;
+  cates!: Category[];
+  authors!: any[];
+  constructor(private storage: AngularFireStorage) {
+
+    this.bookForm = new FormGroup({
+      id: new FormControl(0),
+      title: new FormControl(''),
+      image: new FormControl(''),
+      categoryId: new FormControl(0)
+    })
+   }
 
   ngOnInit(): void {
+    // sử dụng categoryService để lấy danh sách category về 
+    // sau đó gán cho this.cates
+    // sử dụng authorService để lấy danh sách author 
+    // về gán cho this.authors
+
+  }
+
+  get f(){
+    return this.bookForm.controls;
   }
 
   uploadFile(event: any){
@@ -28,6 +50,7 @@ export class UploadDemoComponent implements OnInit {
           this.downloadURL = fileRef.getDownloadURL();
           this.downloadURL.subscribe(url => {
             console.log(url)
+            this.bookForm.value.image = url;
           });
         })
       )
